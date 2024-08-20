@@ -6,10 +6,11 @@
 // TODO: First, familiarize yourself with the two factory functions provided below:
 
 // Factory function to create a book
-function createBook(title, author) {
+function createBook(title, author, year) {
     return {
         title,
         author,
+        year,
         showDetails() {
             console.log(`"${this.title}" by ${this.author}`);
         }
@@ -47,7 +48,18 @@ function createTask(description, dueDate) {
 // }
 
 // TODO: Now, you try building your own book collection with different books!
+let bookCollection = [];
+bookCollection.push(createBook("Snow Crash", "Neal Stephenson", 1992));
+bookCollection.push(createBook("To Kill a Mocking Bird", "Harper Lee", 1960))
+bookCollection.push(createBook("Rich Dad Poor Dad", "Robert Kiyosaki", 1997))
 
+for(let i=0; i<bookCollection.length; i++) {
+    // explicit
+    let book = bookCollection[i];
+    book.showDetails();
+    // terse
+    bookCollection[i].showDetails();
+}
 
 // EXERCISE 2: Managing a Task List
 // INSTRUCTIONS: Create an empty array called `taskList`.
@@ -105,7 +117,21 @@ function createTask(description, dueDate) {
 // }
 
 // TODO: Now, you try rescheduling your own tasks!
+const exampleTaskList = [];
+exampleTaskList.push(createTask('Finish project', '2024-09-10'));
+exampleTaskList.push(createTask('Visit the dentist', '2024-09-11'));
+exampleTaskList.push(createTask('Submit assignment', '2024-09-12'));
+exampleTaskList.push(createTask('Buy milk', '2024-08-19'));
+exampleTaskList.push(createTask('Buy Bread ', '2024-08-19'));
+exampleTaskList.push(createTask('Buy Coffee', '2024-08-20'));
 
+for (let i = 0; i < exampleTaskList.length; i++) {
+    console.log(exampleTaskList[i].description);
+    let oldDate = new Date(exampleTaskList[i].dueDate);
+    let newDate = new Date(oldDate.setDate(oldDate.getDate() + 1));
+    exampleTaskList[i].dueDate = newDate.toISOString().split('T')[0];
+    console.log(`New due date for "${exampleTaskList[i].description}": ${exampleTaskList[i].dueDate}`);
+}
 
 // EXERCISE 5: Counting Completed Tasks
 // INSTRUCTIONS: Create an empty array called `taskList`.
