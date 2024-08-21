@@ -7,10 +7,14 @@
 
 let state = {};
 
+state.name = 'Sam';
+state.email = 'Sam@example.com';
+state.zipCode = '12345';
+
 // EXERCISE 1: Updating Basic Information
 // INSTRUCTIONS: Add properties `name`, `email`, and `zipCode` to the `state` object and assign them appropriate values.
 // Then, log the entire `state` object to the console using `console.log` and `console.table`.
-// Access and log each property individually as well.
+// Access and log ech property individually as well.
 
 // EXAMPLE:
 // state.name = 'Alice Smith';
@@ -25,6 +29,10 @@ let state = {};
 // console.log('Zip Code:', state.zipCode);
 
 // TODO: Now, you try updating the `state` object with your own values for `name`, `email`, and `zipCode`!
+
+state.name = "Bob";
+state.email = "bob@example.com";
+state.zipCode = '90210';
 
 
 // EXERCISE 2: Adding More Personal Information
@@ -53,14 +61,14 @@ let state = {};
 // Log each movie title individually using a loop.
 
 // EXAMPLE:
-// state.favoriteBooks = ['Pride and Prejudice', '1984', 'To Kill a Mockingbird'];
+state.favoriteBooks = ['Pride and Prejudice', '1984', 'To Kill a Mockingbird'];
 
-// console.log('State:', state);
-// console.table(state.favoriteBooks);
+console.log('state:', state);
+console.table(state.favoriteBooks);
 
-// for (let i = 0; i < state.favoriteBooks.length; i++) {
-//     console.log(`Book ${i + 1}:`, state.favoriteBooks[i]);
-// }
+for (let i = 0; i < state.favoriteBooks.length; i++) {
+    console.log(`Book ${i + 1}:`, state.favoriteBooks[i]);
+}
 
 // TODO: Now, you try creating your own list of favorite movies and logging them to the console!
 
